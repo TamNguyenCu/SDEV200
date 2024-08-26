@@ -1,3 +1,4 @@
+package Chapter1;
 public class MovieQuoteInfo {
     public static void main(String[] args) {
         System.out.println("It's A Trap!");

@@ -2,6 +2,8 @@
 // Written by Tam Nguyen Cu
 // Written on August 25 2024
 
+package Chapter1;
+
 /* This class demonstrates the use of println()
 method to print the message Hello, World! */
 public class Hello2 {
