@@ -12,18 +12,31 @@ public class BookstoreCredit {
 to calculate the bookstore credit they will receive 10 times their GPA.*/
     public static void main(String[] args) {
 
-        // Get the name and GPA from the student
-        String studentName = JOptionPane.showInputDialog(null,
-                "Please enter your name: ", "Student's Name", JOptionPane.PLAIN_MESSAGE);
-        String inputGradePoint = JOptionPane.showInputDialog(null,
-                "Please enter your grade point average (GPA): ", "Student's GPA", JOptionPane.PLAIN_MESSAGE);
+        // Get the name and GPA from the studen
+        String studentName = displayInputDialog("Please enter your name: ", "Student's Name");
+        String inputGradePoint = displayInputDialog("Please enter your grade point average (GPA): ", "Student's GPA");
 
         // Calculate the credit
-        float totalCredit = Float.parseFloat(inputGradePoint) * 10;
+        float totalCredit = calCreditOnGPA(Float.parseFloat(inputGradePoint));
         String message = "Name: " + studentName + "\nGPA: " + inputGradePoint
                 + "\nCredit: $" + totalCredit;
 
         // Display the results
-        JOptionPane.showMessageDialog(null, message, "Student's Bookstore Credit", 1);
+        displayMsgDialog(message, "Student's Bookstore Credit", 1);
+    }
+
+    public static String displayInputDialog(String msg, String title) {
+        // Display input dialog
+        return JOptionPane.showInputDialog(null, msg, title, JOptionPane.PLAIN_MESSAGE);
+    }
+
+    public static float calCreditOnGPA(float gpa) {
+        // Calculate the credit
+        return gpa * 10;
+    }
+
+    public static void displayMsgDialog(String message, String title, int messageType) {
+        // Display message dialog
+        JOptionPane.showMessageDialog(null, message, title, messageType);
     }
 }
