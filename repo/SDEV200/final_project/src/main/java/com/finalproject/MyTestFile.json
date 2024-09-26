@@ -1,0 +1,6 @@
+{
+    "name": "Pepperoni Pizza",
+    "sizes": ["Large", "Medium", "Small"],
+    "crust": ["Hand Tossed", "Crunchy Thin", "Original Stuffed", "Original Pan"],
+    "price": 15.78
+}
