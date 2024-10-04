@@ -2,5 +2,5 @@
     "java.project.sourcePaths": [
         "repo/SDEV200"
     ],
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "disabled"
 }

@@ -9,7 +9,7 @@ public class MenuItem {
     private List<String> sizes;
     private List<String> crust;
     private double price;
-    private String image_path;
+    private String imagePath;
 
     public MenuItem() {}
 
@@ -45,12 +45,12 @@ public class MenuItem {
         this.price = price;
     }
 
-    public String getImage_path() {
-        return this.image_path;
+    public String getimagePath() {
+        return this.imagePath;
     }
 
-    public void setImage_path(String image_path) {
-        this.image_path = image_path;
+    public void setimagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     public Map<String,Integer> getToppings() {

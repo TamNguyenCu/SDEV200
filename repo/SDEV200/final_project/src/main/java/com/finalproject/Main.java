@@ -1,28 +1,18 @@
 package com.finalproject;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader; 
-import java.util.Iterator; 
-import java.util.Map; 
-  
-import org.json.simple.JSONArray; 
-import org.json.simple.JSONObject; 
-import org.json.simple.parser.*;
-
 import model.MenuItem;
 
 public class Main {
     public static void main(String[] args) {
-        try {
-            Object obj = new JSONParser().parse(new FileReader("MyTestFile"));
-            JSONObject jo = (JSONObject) obj;
-            
-            String name = jo.get("name");
-            
-            System.out.println("item name: " + name);
+        MenuItem[] menuItem = HandleData.getAllMenu();
 
-        } catch (FileNotFoundException ex) {
-            System.err.println("Cannot find file");
+        System.out.println("Today menu have: ");
+        for (MenuItem item : menuItem) {
+            System.out.println(item.getName());
         }
+
+        MenuItem item = HandleData.getItem("Supreme Pizza");
+        System.out.println(item.getName());
+        System.out.println(item.getPrice());
     }
 }
