@@ -1,63 +1,33 @@
 package model;
 
 import java.util.List;
-import java.util.Map;
 
 public class MenuItem {
-    private String name;
-    private Map<String, Integer> toppings;
-    private List<String> sizes;
-    private List<String> crust;
-    private double price;
-    private String imagePath;
+    private String id;
+    private String category;
+    private List<Item> items;
 
-    public MenuItem() {}
-
-    public List<String> getSizes() {
-        return this.sizes;
+    public String getId() {
+        return this.id;
     }
 
-    public void setSizes(List<String> sizes) {
-        this.sizes = sizes;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public List<String> getCrust() {
-        return this.crust;
+    public String getCategory() {
+        return this.category;
     }
 
-    public void setCrust(List<String> crust) {
-        this.crust = crust;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
-    public String getName() {
-        return this.name;
+    public List<Item> getItems() {
+        return this.items;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getPrice() {
-        return this.price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public String getimagePath() {
-        return this.imagePath;
-    }
-
-    public void setimagePath(String imagePath) {
-        this.imagePath = imagePath;
-    }
-
-    public Map<String,Integer> getToppings() {
-        return this.toppings;
-    }
-
-    public void setToppings(Map<String,Integer> toppings) {
-        this.toppings = toppings;
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 }

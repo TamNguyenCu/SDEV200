@@ -7,6 +7,7 @@ import org.json.simple.parser.JSONParser;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import model.Item;
 import model.MenuItem;
 
 public class HandleData {
@@ -35,11 +36,13 @@ public class HandleData {
         return menu;
     }
 
-    public static MenuItem getItem(String itemName) {
-        MenuItem item = new MenuItem();
+    public static Item getItem(String itemName) {
+        Item item = new Item();
         for (MenuItem menuItem : menuItems) {
-            if (menuItem.getName().equalsIgnoreCase(itemName)) {
-                item = menuItem;
+            for (Item i: menuItem.getItems()) {
+                if (i.getName().equalsIgnoreCase(itemName)) {
+                    item = i;
+                }
             }
         }
         return item;

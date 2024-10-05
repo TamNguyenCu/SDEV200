@@ -1,17 +1,22 @@
 package com.finalproject;
 
+import model.Item;
 import model.MenuItem;
 
 public class Main {
     public static void main(String[] args) {
-        MenuItem[] menuItem = HandleData.getAllMenu();
+        MenuItem[] menu = HandleData.getAllMenu();
+
+        MenuGUI.loadMenuGUI();
 
         System.out.println("Today menu have: ");
-        for (MenuItem item : menuItem) {
-            System.out.println(item.getName());
+        for (MenuItem m : menu) {
+            for (Item i : m.getItems()) {
+                System.out.println(i.getName());
+            }
         }
 
-        MenuItem item = HandleData.getItem("Supreme Pizza");
+        Item item = HandleData.getItem("Espresso");
         System.out.println(item.getName());
         System.out.println(item.getPrice());
     }

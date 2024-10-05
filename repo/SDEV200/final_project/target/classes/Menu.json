@@ -1,74 +1,80 @@
 [
     {
-        "name": "Pepperoni Pizza",
-        "toppings": {"Pepperoni":1,"Mozzarella Cheese":1, "Marinara Sauce":1, "Bacon":0, "Beef":0, "Pork":0, "Grilled Chicken":0, "Mushrooms":0, "Green Bell Peppers":0, "Red Onions":0},
-        "sizes": ["Large", "Medium", "Small"],
-        "crust": ["Hand Tossed", "Crunchy Thin", "Original Stuffed", "Original Pan"],
-        "price": 15.78,
-        "imagePath": "images/Pizza_PEPPERONI.png"
+        "id": "coffee",
+        "category": "Coffee",
+        "items": [
+            {
+                "name": "Americano",
+                "img": "../../../images/armericano-hot.jpg",
+                "price": 10
+            },
+            {
+                "name": "Cappuccino",
+                "img": "../../../images/cappuccino.jpg",
+                "price": 10
+            },
+            {
+                "name": "Espresso",
+                "img": "../../../images/espresso-hot.jpg",
+                "price": 10
+            },
+            {
+                "name": "Latte",
+                "img": "../../../images/latte-hot.jpg",
+                "price": 10
+            }
+        ]
     },
     {
-        "name": "Cheese Pizza",
-        "toppings": {"Pepperoni":0,"Mozzarella Cheese":1, "Marinara Sauce":1, "Bacon":0, "Beef":0, "Pork":0, "Grilled Chicken":0, "Mushrooms":0, "Green Bell Peppers":0, "Red Onions":0},
-        "sizes": ["Large", "Medium", "Small"],
-        "crust": ["Hand Tossed", "Crunchy Thin", "Original Stuffed", "Original Pan"],
-        "price": 13.99,
-        "imagePath": "images/Pizza_CHEESE.png"
+        "id": "tea",
+        "category": "Tea",
+        "items": [
+            {
+                "name": "Back tea macchiato",
+                "img": "../../../images/black-tea-matchiato.jpg",
+                "price": 10
+            },
+            {
+                "name": "Boba pearls tea",
+                "img": "../../../images/boba-pearls-tea.jpg",
+                "price": 10
+            },
+            {
+                "name": "Oolong milk tea",
+                "img": "../../../images/oolong-milk-tea.jpg",
+                "price": 10
+            },
+            {
+                "name": "Peach tea",
+                "img": "../../../images/peach-orange-lemongrass-tea.jpg",
+                "price": 10
+            }
+        ]
     },
     {
-        "name": "Supreme Pizza",
-        "toppings": {"Pepperoni":1,"Mozzarella Cheese":0, "Marinara Sauce":1, "Bacon":0, "Beef":1, "Pork":1, "Grilled Chicken":0, "Mushrooms":1, "Green Bell Peppers":1, "Red Onions":1},
-        "sizes": ["Large", "Medium", "Small"],
-        "crust": ["Hand Tossed", "Crunchy Thin", "Original Stuffed", "Original Pan"],
-        "price": 18.99,
-        "imagePath": "images/Pizza_SUPREME.png"
-    },
-    {
-        "name": "Garlic Bread",
-        "toppings": {},
-        "sizes": [],
-        "crust": [],
-        "price": 5.99,
-        "imagePath": "images/Sides_GarlicBread.png"
-    },
-    {
-        "name": "Cheese Bread",
-        "toppings": {},
-        "sizes": [],
-        "crust": [],
-        "price": 7.99,
-        "imagePath": "images/Sides_CheeseBread.png"
-    },
-    {
-        "name": "Breadsticks",
-        "toppings": {},
-        "sizes": [],
-        "crust": [],
-        "price": 6.19,
-        "imagePath": "images/Sides_Breadsticks.png"
-    },
-    {
-        "name": "PEPSI",
-        "toppings": {},
-        "sizes": [],
-        "crust": [],
-        "price": 2.49,
-        "imagePath": "images/Drinks_Pepsi.png"
-    },
-    {
-        "name": "MTN DEW",
-        "toppings": {},
-        "sizes": [],
-        "crust": [],
-        "price": 2.49,
-        "imagePath": "images/Drinks_MtnDew.png"
-    },
-    {
-        "name": "Mug Root Beer",
-        "toppings": {},
-        "sizes": [],
-        "crust": [],
-        "price": 18.99,
-        "imagePath": "images/Drinks_MugRootBeer.png"
+        "id": "food",
+        "category": "Food & Dessert",
+        "items": [
+            {
+                "name": "Banh mi Vietnam",
+                "img": "../../../images/banh-mi-vietnam.jpg",
+                "price": 10
+            },
+            {
+                "name": "Butter croissant",
+                "img": "../../../images/butter-croissant.jpg",
+                "price": 10
+            },
+            {
+                "name": "Pate chaud",
+                "img": "../../../images/pate-chaud.jpg",
+                "price": 10
+            },
+            {
+                "name": "Tiramisu",
+                "img": "../../../images/tiramisu.jpg",
+                "price": 10
+            }
+        ]
     }
 ]
