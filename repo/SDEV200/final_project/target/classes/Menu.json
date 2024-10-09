@@ -5,22 +5,22 @@
         "items": [
             {
                 "name": "Americano",
-                "img": "../../../images/armericano-hot.jpg",
+                "img": "repo/SDEV200/final_project/src/main/images/armericano-hot.png",
                 "price": 10
             },
             {
                 "name": "Cappuccino",
-                "img": "../../../images/cappuccino.jpg",
+                "img": "repo/SDEV200/final_project/src/main/images/cappuccino.png",
                 "price": 10
             },
             {
                 "name": "Espresso",
-                "img": "../../../images/espresso-hot.jpg",
+                "img": "repo/SDEV200/final_project/src/main/images/espresso-hot.png",
                 "price": 10
             },
             {
                 "name": "Latte",
-                "img": "../../../images/latte-hot.jpg",
+                "img": "repo/SDEV200/final_project/src/main/images/latte-hot.png",
                 "price": 10
             }
         ]
@@ -31,22 +31,22 @@
         "items": [
             {
                 "name": "Back tea macchiato",
-                "img": "../../../images/black-tea-matchiato.jpg",
+                "img": "repo/SDEV200/final_project/src/main/images/black-tea-matchiato.png",
                 "price": 10
             },
             {
                 "name": "Boba pearls tea",
-                "img": "../../../images/boba-pearls-tea.jpg",
+                "img": "repo/SDEV200/final_project/src/main/images/boba-pearls-tea.png",
                 "price": 10
             },
             {
                 "name": "Oolong milk tea",
-                "img": "../../../images/oolong-milk-tea.jpg",
+                "img": "repo/SDEV200/final_project/src/main/images/oolong-milk-tea.png",
                 "price": 10
             },
             {
                 "name": "Peach tea",
-                "img": "../../../images/peach-orange-lemongrass-tea.jpg",
+                "img": "repo/SDEV200/final_project/src/main/images/peach-orange-lemongrass-tea.png",
                 "price": 10
             }
         ]
@@ -57,22 +57,22 @@
         "items": [
             {
                 "name": "Banh mi Vietnam",
-                "img": "../../../images/banh-mi-vietnam.jpg",
+                "img": "repo/SDEV200/final_project/src/main/images/banh-mi-vietnam.png",
                 "price": 10
             },
             {
                 "name": "Butter croissant",
-                "img": "../../../images/butter-croissant.jpg",
+                "img": "repo/SDEV200/final_project/src/main/images/butter-croissant.png",
                 "price": 10
             },
             {
                 "name": "Pate chaud",
-                "img": "../../../images/pate-chaud.jpg",
+                "img": "repo/SDEV200/final_project/src/main/images/pate-chaud.png",
                 "price": 10
             },
             {
                 "name": "Tiramisu",
-                "img": "../../../images/tiramisu.jpg",
+                "img": "repo/SDEV200/final_project/src/main/images/tiramisu.png",
                 "price": 10
             }
         ]
