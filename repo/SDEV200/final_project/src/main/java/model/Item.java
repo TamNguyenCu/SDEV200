@@ -4,6 +4,24 @@ public class Item {
     private String name;
     private String img;
     private double price;
+    private String describe;
+    private String category;
+
+    public String getCategory() {
+        return this.category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getDescribe() {
+        return this.describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
 
     public String getName() {
         return this.name;

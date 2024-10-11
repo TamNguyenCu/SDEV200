@@ -1,80 +1,148 @@
-[
-    {
-        "id": "coffee",
-        "category": "Coffee",
-        "items": [
-            {
-                "name": "Americano",
-                "img": "repo/SDEV200/final_project/src/main/images/armericano-hot.png",
-                "price": 10
-            },
-            {
-                "name": "Cappuccino",
-                "img": "repo/SDEV200/final_project/src/main/images/cappuccino.png",
-                "price": 10
-            },
-            {
-                "name": "Espresso",
-                "img": "repo/SDEV200/final_project/src/main/images/espresso-hot.png",
-                "price": 10
-            },
-            {
-                "name": "Latte",
-                "img": "repo/SDEV200/final_project/src/main/images/latte-hot.png",
-                "price": 10
-            }
-        ]
-    },
-    {
-        "id": "tea",
-        "category": "Tea",
-        "items": [
-            {
-                "name": "Back tea macchiato",
-                "img": "repo/SDEV200/final_project/src/main/images/black-tea-matchiato.png",
-                "price": 10
-            },
-            {
-                "name": "Boba pearls tea",
-                "img": "repo/SDEV200/final_project/src/main/images/boba-pearls-tea.png",
-                "price": 10
-            },
-            {
-                "name": "Oolong milk tea",
-                "img": "repo/SDEV200/final_project/src/main/images/oolong-milk-tea.png",
-                "price": 10
-            },
-            {
-                "name": "Peach tea",
-                "img": "repo/SDEV200/final_project/src/main/images/peach-orange-lemongrass-tea.png",
-                "price": 10
-            }
-        ]
-    },
-    {
-        "id": "food",
-        "category": "Food & Dessert",
-        "items": [
-            {
-                "name": "Banh mi Vietnam",
-                "img": "repo/SDEV200/final_project/src/main/images/banh-mi-vietnam.png",
-                "price": 10
-            },
-            {
-                "name": "Butter croissant",
-                "img": "repo/SDEV200/final_project/src/main/images/butter-croissant.png",
-                "price": 10
-            },
-            {
-                "name": "Pate chaud",
-                "img": "repo/SDEV200/final_project/src/main/images/pate-chaud.png",
-                "price": 10
-            },
-            {
-                "name": "Tiramisu",
-                "img": "repo/SDEV200/final_project/src/main/images/tiramisu.png",
-                "price": 10
-            }
-        ]
-    }
-]
+{
+    "coffee": [
+        {
+            "name": "Americano",
+            "category": "coffee",
+            "img": "repo/SDEV200/final_project/src/main/images/armericano-hot.png",
+            "price": 10,
+            "describe": "Espresso shots topped with hot water create a light layer of crema culminating in this wonderfully rich cup with depth and nuance."
+        },
+        {
+            "name": "Cappuccino",
+            "category": "coffee",
+            "img": "repo/SDEV200/final_project/src/main/images/cappuccino.png",
+            "price": 10,
+            "describe": "Cappuccino is a drink that blends the aroma of milk, the fatty taste of cream foam and the rich taste of Espresso coffee. All create a special flavor, a bit gentle, quiet and delicate."
+        },
+        {
+            "name": "Espresso",
+            "category": "coffee",
+            "img": "repo/SDEV200/final_project/src/main/images/espresso-hot.png",
+            "price": 10,
+            "describe": "An original cup of Espresso starts with quality Arabica beans, mixed with a balanced ratio of Robusta beans, creating a caramel sweetness, mild sourness and consistency."
+        },
+        {
+            "name": "Latte",
+            "category": "coffee",
+            "img": "repo/SDEV200/final_project/src/main/images/latte-hot.png",
+            "price": 10,
+            "describe": "A delicate combination of the bitter taste of pure Espresso coffee mixed with the sweet taste of hot milk, topped with a thin layer of cream, creating a perfect cup of coffee in taste and appearance."
+        },
+        {
+            "name": "Ice cappuccino",
+            "category": "coffee",
+            "img": "repo/SDEV200/final_project/src/main/images/ice-cappuccino.png",
+            "price": 10,
+            "describe": "Cappuccino is a drink that blends the aroma of milk, the fatty taste of cream foam and the rich taste of Espresso coffee. All create a special flavor, a bit gentle, quiet and delicate."
+        },
+        {
+            "name": "Ice espresso",
+            "category": "coffee",
+            "img": "repo/SDEV200/final_project/src/main/images/ice-espresso.png",
+            "price": 10,
+            "describe": "An original cup of Espresso starts with quality Arabica beans, mixed with a balanced ratio of Robusta beans, creating a caramel sweetness, mild sourness and consistency."
+        },
+        {
+            "name": "Ice latte",
+            "category": "coffee",
+            "img": "repo/SDEV200/final_project/src/main/images/ice-latte.png",
+            "price": 10,
+            "describe": "A delicate combination of the bitter taste of pure Espresso coffee mixed with the sweet taste of hot milk, topped with a thin layer of cream, creating a perfect cup of coffee in taste and appearance."
+        },
+        {
+            "name": "Classic cold brew",
+            "category": "coffee",
+            "img": "repo/SDEV200/final_project/src/main/images/classic-cold-brew.png",
+            "price": 10,
+            "describe": "Americano is prepared by adding water at a certain ratio to a cup of Espresso coffee, thereby bringing a gentle flavor and preserving the characteristic coffee scent."
+        }
+    ],
+    "tea": [
+        {
+            "name": "Back tea macchiato",
+            "category": "tea",
+            "img": "repo/SDEV200/final_project/src/main/images/black-tea-matchiato.png",
+            "price": 10,
+            "describe": "Black tea is freshly brewed every day, retaining the characteristic strong astringency of the tea leaves, topped with a layer of 'homemade' Macchiato that floats and captivates the salty, fatty cheese flavor."
+        },
+        {
+            "name": "Boba pearls tea",
+            "category": "tea",
+            "img": "repo/SDEV200/final_project/src/main/images/boba-pearls-tea.png",
+            "price": 10,
+            "describe": "Add a little sweetness to your day with whole-leaf black tea, fragrant milk calibrated in perfect proportions, and crispy white pearls available for you to enjoy every sip of sweet and fragrant milk tea."
+        },
+        {
+            "name": "Oolong milk tea",
+            "category": "tea",
+            "img": "repo/SDEV200/final_project/src/main/images/oolong-milk-tea.png",
+            "price": 10,
+            "describe": "The flavor of true love is rich with oolong tea that is roasted longer for a rich flavor, mixed with fragrant milk to bring a cool feeling, lingering on the rich milk tea flavor on the palate."
+        },
+        {
+            "name": "Peach tea",
+            "category": "tea",
+            "img": "repo/SDEV200/final_project/src/main/images/peach-orange-lemongrass-tea.png",
+            "price": 10,
+            "describe": "The sweetness of peaches, the mild sourness of whole oranges, the astringency of fresh black tea brewed every 4 hours, and the characteristic strong aroma of lemongrass are the bright spots that make up the appeal of this drink."
+        },
+        {
+            "name": "Lotus seed tea",
+            "category": "tea",
+            "img": "repo/SDEV200/final_project/src/main/images/lotus-seed-tea.png",
+            "price": 10,
+            "describe": "Premium oolong tea base combined with fresh, nutty lotus seeds and fatty cheese foam. Lotus seed tea is a cool, gentle drink suitable for both morning and evening."
+        },
+        {
+            "name": "Hibiscus lychee tea",
+            "category": "tea",
+            "img": "repo/SDEV200/final_project/src/main/images/hibiscus-lychee-tea.png",
+            "price": 10,
+            "describe": "The sweetness of Lychee, mixed with the elegant sourness of Hibiscus flower tea, brings you a standard drink that is both delicious and healthy."
+        }
+    ],
+    "food": [
+        {
+            "name": "Vietnamese banh mi",
+            "category": "food",
+            "img": "repo/SDEV200/final_project/src/main/images/banh-mi-vietnam.png",
+            "price": 10,
+            "describe": "Encapsulated in a loaf of Vietnamese bread are layers of patties, layers of ham mixed with butter and fragrant pate, plus pickled vegetables for an energizing breakfast. *The cake will be most delicious and flavorful when accompanied with pate. To ensure the perfect flavor, we hope for your understanding as we cannot change the quantity of pate."
+        },
+        {
+            "name": "Butter croissant",
+            "category": "food",
+            "img": "repo/SDEV200/final_project/src/main/images/butter-croissant.png",
+            "price": 10,
+            "describe": "Take a bite, the crust is crispy and fragrant with butter, then smooth and melts in your mouth. Extremely sticky when sipping Butter Croissant with coffee or dipping it into the House's egg foam drinks"
+        },
+        {
+            "name": "Pate chaud",
+            "category": "food",
+            "img": "repo/SDEV200/final_project/src/main/images/pate-chaud.png",
+            "price": 10,
+            "describe": "Delicious with pate filling and pork rolled in a fragrant, buttery, crispy puff pastry crust."
+        },
+        {
+            "name": "Tiramisu",
+            "category": "food",
+            "img": "repo/SDEV200/final_project/src/main/images/tiramisu.png",
+            "price": 10,
+            "describe": "The addictive flavor is created by the slight bitterness of coffee and the attractive sweet and fatty egg cream layer"
+        },
+        {
+            "name": "Mango mochi",
+            "category": "food",
+            "img": "repo/SDEV200/final_project/src/main/images/mango-mochi.png",
+            "price": 10,
+            "describe": "Covered by a fragrant Mochi crust, inside is a layer of cold cream and sweet and sour mango filling. Order a Mochi for a refreshing day. The product must be kept cool and best consumed within 2 hours after receipt."
+        },
+        {
+            "name": "Matcha mochi",
+            "category": "food",
+            "img": "repo/SDEV200/final_project/src/main/images/matcha-mochi.png",
+            "price": 10,
+            "describe": "Covered by a fragrant Mochi shell, inside is a layer of cold cream and rich green tea filling. Order a Mochi for a refreshing day. The product must be kept cool and best consumed within 2 hours after receipt."
+        }
+    ]
+}
