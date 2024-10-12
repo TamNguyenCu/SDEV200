@@ -9,4 +9,9 @@ public class FilePath {
         File file = new File(COMMON_PATH + "resources/Menu.json");
         return file.getAbsolutePath();
     }
+
+    public static String iconImage() {
+        File file = new File(COMMON_PATH + "images/favicon.ico");
+        return file.getAbsolutePath();
+    }
 }

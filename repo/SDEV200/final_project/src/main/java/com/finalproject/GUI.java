@@ -32,11 +32,14 @@ public class GUI {
 
     public static JFrame createFrame() {
         JFrame frame = new JFrame();
-        frame.setTitle("My Coffee App");
+        frame.setTitle("The Coffee Shop");
         frame.setLayout(null);
         frame.setSize(1280, 800);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        ImageIcon icon = new ImageIcon(FilePath.iconImage());
+        frame.setIconImage(icon.getImage());
         return frame;
     }
 
@@ -97,7 +100,7 @@ public class GUI {
         headerPanel.setBounds(0, 0, 1280, 60);
         headerPanel.setLayout(new FlowLayout(FlowLayout.CENTER,50,10));
         
-        JLabel appName = new JLabel("My Coffee App");
+        JLabel appName = new JLabel("The Coffee Shop");
         appName.setFont(new Font("Ariel", Font.BOLD, 24));
 
         JButton menuBtn = new JButton("Menu");
