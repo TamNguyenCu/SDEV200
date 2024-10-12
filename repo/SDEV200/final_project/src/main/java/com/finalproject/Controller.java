@@ -12,15 +12,15 @@ public class Controller {
     static JFrame menuFrame;
     static JFrame cartFrame;
     static JFrame itemFrame;
+    static JFrame checkoutFrame;
     static List<Item> selectedItems = new ArrayList<Item>();
     
     public static void startApplication() {
         menuFrame = GUI.createFrame();
         cartFrame = GUI.createFrame();
         itemFrame = GUI.createFrame();
-        GUI.loadMenuGUI(menuFrame);
-        GUI.loadCartGUI(cartFrame);
-        
+        checkoutFrame = GUI.createFrame();
+        GUI.menuGUI(menuFrame);
         loadGUI(GUI.MENU);
     }
 
@@ -30,26 +30,49 @@ public class Controller {
                 menuFrame.setVisible(true);
                 cartFrame.setVisible(false);
                 itemFrame.setVisible(false);
+                checkoutFrame.setVisible(false);
                 break;
             case GUI.CART:
                 menuFrame.setVisible(false);
                 cartFrame.setVisible(true);
                 itemFrame.setVisible(false);
+                checkoutFrame.setVisible(false);
                 break;
             case GUI.ITEM:
                 menuFrame.setVisible(false);
                 cartFrame.setVisible(false);
                 itemFrame.setVisible(true);
+                checkoutFrame.setVisible(false);
+                break;
+            case GUI.CHECKOUT:
+                menuFrame.setVisible(false);
+                cartFrame.setVisible(false);
+                itemFrame.setVisible(false);
+                checkoutFrame.setVisible(true);
                 break;
             default:
                 System.err.println("Invalid frame");;
         }    
     }
 
+    public static void loadCartGUI() {
+        cartFrame.dispose();
+        cartFrame = GUI.createFrame();
+        GUI.cartGUI(cartFrame, selectedItems);
+        loadGUI(GUI.CART);
+    }
+
+    public static void loadCheckoutGUI() {
+        checkoutFrame.dispose();
+        checkoutFrame = GUI.createFrame();
+        GUI.checkoutGUI(checkoutFrame, selectedItems);
+        loadGUI(GUI.CHECKOUT);
+    }
+
     public static void loadItemGUI(Item item) {
         itemFrame.dispose();
         itemFrame = GUI.createFrame();
-        GUI.loadItemGUI(itemFrame, item);
+        GUI.itemGUI(itemFrame, item);
         loadGUI(GUI.ITEM);
     }
 
@@ -61,9 +84,5 @@ public class Controller {
         JOptionPane.showMessageDialog(cartFrame, "You have added " + itemName + 
             " to your cart. There are now " + selectedItems.size() + " items in your cart.", 
             "Added to cart", JOptionPane.PLAIN_MESSAGE);
-        System.out.println("--------------");
-        for (Item it : selectedItems) {
-            System.out.println(it.getName() + ": " + it.getPrice());
-        }
     }
 }

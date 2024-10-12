@@ -14,4 +14,9 @@ public class FilePath {
         File file = new File(COMMON_PATH + "images/favicon.ico");
         return file.getAbsolutePath();
     }
+
+    public static String iconRemove() {
+        File file = new File(COMMON_PATH + "images/delete-button.png");
+        return file.getAbsolutePath();
+    }
 }

@@ -103,7 +103,7 @@
     ],
     "food": [
         {
-            "name": "Vietnamese banh mi",
+            "name": "Banh mi",
             "category": "food",
             "img": "repo/SDEV200/final_project/src/main/images/banh-mi-vietnam.png",
             "price": 10,
