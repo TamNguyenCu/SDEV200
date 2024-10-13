@@ -8,6 +8,8 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.BorderFactory;
@@ -21,11 +23,14 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 import model.Item;
 
-public class GUI {
+public class GUI extends JFrame implements ActionListener {
 
     final static String MENU = "menu";
     final static String CART = "cart";
@@ -35,19 +40,19 @@ public class GUI {
     final static String TEA = "tea";
     final static String FOOD = "food";
 
+    static double taxRate = 0.08;
     static double addPrice = 0.0;
+    static double total = 0.0;
 
-    public static JFrame createFrame() {
-        JFrame frame = new JFrame();
-        frame.setTitle("The Coffee Shop");
-        frame.setLayout(null);
-        frame.setSize(1280, 800);
-        // frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        ImageIcon icon = new ImageIcon(FilePath.iconImage());
-        frame.setIconImage(icon.getImage());
-        return frame;
+    public GUI() {
+        super("The Coffee Shop");
+        final int WIDTH = 1280;
+        final int HEIGHT = 800;
+        setSize(WIDTH, HEIGHT);
+        setLayout(null);
+        // setResizable(false);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setIconImage(new ImageIcon(FilePath.iconImage()).getImage());
     }
 
     public static void menuGUI(JFrame frame) {
@@ -59,9 +64,13 @@ public class GUI {
         sidePanel.setLayout(new FlowLayout(FlowLayout.CENTER, 250, 20));
 
         JPanel itemPanel = new JPanel();
-        itemPanel.setBorder(BorderFactory.createLineBorder(Color.black));
-        itemPanel.setBounds(299, 49, 980, 750);
-        itemPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 100, 50));
+
+        JScrollPane scroll = new JScrollPane(itemPanel);
+        scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        JPanel panel = new JPanel(new BorderLayout());
+        panel.add(scroll, BorderLayout.CENTER);
+        panel.setBounds(299, 60, 967, 703);
 
         menuItem(COFFEE, itemPanel);
 
@@ -93,25 +102,105 @@ public class GUI {
         sidePanel.add(teaBtn);
         sidePanel.add(foodBtn);
 
-        frame.add(itemPanel);
+        frame.add(panel);
         frame.add(sidePanel);
     }
 
     public static void checkoutGUI(JFrame frame, List<Item> items) {
         header(frame);
+        double saleTax = total * taxRate;
+
+        JPanel infoPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 50,10));
+        infoPanel.setBounds(150, 200, 400, 400);
+
+        JPanel orderPanel = new JPanel();
+        orderPanel.setLayout(new BoxLayout(orderPanel, BoxLayout.Y_AXIS));
+        orderPanel.setBorder(BorderFactory.createMatteBorder(0, 1, 0, 0, Color.black));
+        orderPanel.setBounds(700, 200, 400, 200);
+        
+        Font bigFont = new Font("Arial", Font.BOLD, 20);
+        JLabel name = new JLabel("*Name:");
+        name.setFont(bigFont);
+        JTextField nameField = new JTextField(20);
+
+        JLabel email = new JLabel(" Email:");
+        email.setFont(bigFont);
+        JTextField emailField = new JTextField(20);
+
+        JLabel subTotLabel = new JLabel("Subtotal: $" + total);
+        subTotLabel.setFont(bigFont);
+
+        JLabel saleTaxLabel = new JLabel("Tax: $" + String.format("%.2f", saleTax));
+        saleTaxLabel.setFont(bigFont);
+
+        JLabel totalLabel = new JLabel("Total: $" + (saleTax + total));
+        totalLabel.setFont(new Font("Arial", Font.BOLD, 28));
+
+        JButton orderBtn = new JButton("Place your order");
+        orderBtn.setFont(bigFont);
+        orderBtn.setFocusable(false);
+        orderBtn.setSize(new Dimension(120, 30));
+        orderBtn.setFont(new Font("Arial", Font.BOLD, 28));
+        orderBtn.setForeground(Color.white);
+        orderBtn.setBackground(Color.DARK_GRAY);
+        if (nameField.getText().length() == 0) {
+            orderBtn.setEnabled(false);
+        }
+        nameField.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                checkInput();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                checkInput();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                checkInput();
+            }
+
+            public void checkInput() {
+                if (nameField.getText().length() > 0) {
+                    orderBtn.setEnabled(true);
+                } else {
+                    orderBtn.setEnabled(false);
+                }
+            }
+        });
+
+        orderBtn.addActionListener(e -> {
+            Controller.checkout();
+        });
+
+
+        infoPanel.add(name);
+        infoPanel.add(nameField);
+        infoPanel.add(email);
+        infoPanel.add(emailField);
+        infoPanel.add(orderBtn);
+
+        orderPanel.add(subTotLabel);
+        orderPanel.add(saleTaxLabel);
+        orderPanel.add(totalLabel);
+
+        frame.add(infoPanel);
+        frame.add(orderPanel);
     }
 
     public static void cartGUI(JFrame frame, List<Item> items) {
         header(frame);
-        double total = 0.0;
+        total = 0.0;
 
         JPanel itemPanel = new JPanel();
         itemPanel.setLayout(new GridLayout(items.size(), 4));
 
-        JPanel panel = new JPanel(new BorderLayout());
-
         JScrollPane scroll = new JScrollPane(itemPanel);
         scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+
+        JPanel panel = new JPanel(new BorderLayout());
         panel.add(scroll, BorderLayout.CENTER);
         panel.setBounds(100, 80, 1060, 550);
 
@@ -136,6 +225,7 @@ public class GUI {
             delBtn.setIcon(new ImageIcon(newDelImage));
             delBtn.addActionListener(e -> {
                 items.remove(item);
+                total -= item.getPrice();
                 Controller.loadCartGUI();
             });
             total += item.getPrice();
@@ -202,7 +292,6 @@ public class GUI {
     }
 
     public static void itemGUI(JFrame frame, Item item) {
-
         header(frame);
 
         JPanel leftPanel = new JPanel();
@@ -296,8 +385,11 @@ public class GUI {
     public static void menuItem(String menuName, JPanel panel) {
         panel.removeAll();
         panel.setVisible(false);
+
         Item[] items = HandleData.getItemsOfCategory(menuName);
-        for (Item item : items) {
+        int rows = (int) Math.ceil(items.length / 3.0);
+        panel.setLayout(new GridLayout(rows, 3));
+        for (Item item: items) {
 
             // Get image and resize
             ImageIcon icon = new ImageIcon(item.getImg());
@@ -318,5 +410,9 @@ public class GUI {
             panel.add(itemBtn);
         }
         panel.setVisible(true);
+    }
+    
+    @Override
+    public void actionPerformed(ActionEvent e) {
     }
 }
