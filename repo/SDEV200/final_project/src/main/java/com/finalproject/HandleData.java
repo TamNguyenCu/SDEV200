@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import model.Item;
 
 public class HandleData {
+    // Get a specific item from the specified category
     public static Item getItem(String itemName, String category) {
         Item item = new Item();
         for (Item i : getItemsOfCategory(category)) {
@@ -22,6 +23,7 @@ public class HandleData {
         return item;
     }
 
+    // Get all items of a specific category
     public static Item[] getItemsOfCategory(String category) {
         Item[] items = new Item[]{};
         ObjectMapper objectMapper = new ObjectMapper();

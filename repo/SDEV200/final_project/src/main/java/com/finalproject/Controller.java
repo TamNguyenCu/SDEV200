@@ -23,16 +23,20 @@ public class Controller {
     static JFrame checkoutFrame;
     static List<Item> selectedItems = new ArrayList<Item>();
     
+    // Start the application
     public static void startApplication() {
+        // Create frames
         menuFrame = new GUI();
         cartFrame = new GUI();
         itemFrame = new GUI();
         checkoutFrame = new GUI();
+        // Create menu GUI and set visible
         GUI.menuGUI(menuFrame);
         loadGUI(GUI.MENU);
     }
 
     public static void loadGUI(String frame) {
+        // Set visible based on the frame
         switch (frame) {
             case GUI.MENU:
                 menuFrame.setVisible(true);
@@ -63,27 +67,34 @@ public class Controller {
         }    
     }
 
+    // load cart GUI
     public static void loadCartGUI() {
+        // dispose and create new GUI
         cartFrame.dispose();
         cartFrame = new GUI();
         GUI.cartGUI(cartFrame, selectedItems);
         loadGUI(GUI.CART);
     }
 
+    // load checkout GUI
     public static void loadCheckoutGUI() {
+        // dispose and create new GUI
         checkoutFrame.dispose();
         checkoutFrame = new GUI();
         GUI.checkoutGUI(checkoutFrame, selectedItems);
         loadGUI(GUI.CHECKOUT);
     }
 
+    // load item GUI
     public static void loadItemGUI(Item item) {
+        // dispose and create new GUI
         itemFrame.dispose();
         itemFrame = new GUI();
         GUI.itemGUI(itemFrame, item);
         loadGUI(GUI.ITEM);
     }
 
+    // add item to cart
     public static void addToCart(String itemName, String category, double addPrice) {
         Item item = HandleData.getItem(itemName, category);
         item.setPrice(item.getPrice() + addPrice);
@@ -92,8 +103,13 @@ public class Controller {
         JOptionPane.showMessageDialog(cartFrame, "You have added " + itemName + 
             " to your cart. There are now " + selectedItems.size() + " items in your cart.", 
             "Added to cart", JOptionPane.PLAIN_MESSAGE);
+        
+        for (Item i: selectedItems) {
+            System.out.println(i.getName());
+        }
     }
 
+    // checkout process
     public static void checkout() {
         JOptionPane.showMessageDialog(checkoutFrame, "Your order has been placed. Thank you!", 
         "Order placed", JOptionPane.PLAIN_MESSAGE);
@@ -102,6 +118,7 @@ public class Controller {
         loadGUI(GUI.MENU);
     }
 
+    // export receipt file
     public static void printReceipt(List<Item> items) {
         Path filePath = 
             Paths.get("C:\\Users\\Public\\Desktop\\Order_Receipt.txt");

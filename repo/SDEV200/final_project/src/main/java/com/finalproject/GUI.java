@@ -44,20 +44,21 @@ public class GUI extends JFrame implements ActionListener {
     static double addPrice = 0.0;
     static double total = 0.0;
 
+    // GUI constructor
     public GUI() {
         super("The Coffee Shop");
         final int WIDTH = 1280;
         final int HEIGHT = 800;
         setSize(WIDTH, HEIGHT);
         setLayout(null);
-        // setResizable(false);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setIconImage(new ImageIcon(FilePath.iconImage()).getImage());
+        header(this);
     }
 
+    // create menu GUI
     public static void menuGUI(JFrame frame) {
-        header(frame);
-
         JPanel sidePanel = new JPanel();
         sidePanel.setBorder(BorderFactory.createLineBorder(Color.black));
         sidePanel.setBounds(0, 59, 300, 740);
@@ -106,8 +107,8 @@ public class GUI extends JFrame implements ActionListener {
         frame.add(sidePanel);
     }
 
+    // create checkout GUI
     public static void checkoutGUI(JFrame frame, List<Item> items) {
-        header(frame);
         double saleTax = total * taxRate;
 
         JPanel infoPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 50,10));
@@ -146,6 +147,7 @@ public class GUI extends JFrame implements ActionListener {
         if (nameField.getText().length() == 0) {
             orderBtn.setEnabled(false);
         }
+        // even listener for name field
         nameField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -190,8 +192,8 @@ public class GUI extends JFrame implements ActionListener {
         frame.add(orderPanel);
     }
 
+    // create cart GUI
     public static void cartGUI(JFrame frame, List<Item> items) {
-        header(frame);
         total = 0.0;
 
         JPanel itemPanel = new JPanel();
@@ -260,6 +262,7 @@ public class GUI extends JFrame implements ActionListener {
         frame.add(bottomPanel);
     }
 
+    // create header for all GUI
     public static void header(JFrame frame) {
         JPanel headerPanel = new JPanel();
         headerPanel.setBorder(BorderFactory.createLineBorder(Color.black));
@@ -291,9 +294,8 @@ public class GUI extends JFrame implements ActionListener {
         frame.add(headerPanel);
     }
 
+    // create item GUI
     public static void itemGUI(JFrame frame, Item item) {
-        header(frame);
-
         JPanel leftPanel = new JPanel();
         leftPanel.setBounds(0, 100, 550, 400);
         leftPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 50, 50));
@@ -383,6 +385,7 @@ public class GUI extends JFrame implements ActionListener {
         frame.add(bottomPanel);
     }
 
+    // create item for each menu
     public static void menuItem(String menuName, JPanel panel) {
         panel.removeAll();
         panel.setVisible(false);
