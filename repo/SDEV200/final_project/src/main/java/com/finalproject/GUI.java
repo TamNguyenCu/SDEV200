@@ -303,7 +303,7 @@ public class GUI extends JFrame implements ActionListener {
         rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
 
         JPanel bottomPanel = new JPanel();
-        bottomPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 20));
+        bottomPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 150, 20));
         bottomPanel.setBorder(BorderFactory.createMatteBorder(2, 0, 0, 0, Color.black));
         bottomPanel.setBounds(100, 549, 1065, 200);
 
@@ -315,10 +315,11 @@ public class GUI extends JFrame implements ActionListener {
         JLabel imgLabel = new JLabel(new ImageIcon(newImage));
 
         JTextArea itemDesc = new JTextArea(item.getDescribe());
+        itemDesc.setLineWrap(true);
         itemDesc.setEditable(false);
         itemDesc.setBackground(null);
         itemDesc.setFont(new Font("Arial", Font.PLAIN, 18));
-        itemDesc.setSize(new Dimension(100, 50));
+        itemDesc.setSize(new Dimension(800, 50));
 
         JLabel descTitle = new JLabel("Description");
         descTitle.setFont(new Font("Arial", Font.BOLD, 20));
